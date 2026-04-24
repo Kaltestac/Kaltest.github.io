@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .clock { font-size: 24px; margin: 20px; }
+    </style>
+    <script>
+        function updateClocks() {
+            const now = new Date();
+            document.getElementById('new-york').innerText = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+            document.getElementById('london').innerText = now.toLocaleString('en-GB', { timeZone: 'Europe/London' });
+            document.getElementById('tokyo').innerText = now.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
+            document.getElementById('sydney').innerText = now.toLocaleString('en-AU', { timeZone: 'Australia/Sydney' });
+            document.getElementById('dubai').innerText = now.toLocaleString('en-AE', { timeZone: 'Asia/Dubai' });
+            document.getElementById('los-angeles').innerText = now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+        }
+        setInterval(updateClocks, 1000);
+    </script>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+    <div class="clock">
+        <div><strong>New York:</strong> <span id="new-york"></span></div>
+        <div><strong>London:</strong> <span id="london"></span></div>
+        <div><strong>Tokyo:</strong> <span id="tokyo"></span></div>
+        <div><strong>Sydney:</strong> <span id="sydney"></span></div>
+        <div><strong>Dubai:</strong> <span id="dubai"></span></div>
+        <div><strong>Los Angeles:</strong> <span id="los-angeles"></span></div>
+    </div>
+    <script>updateClocks();</script>
+</body>
+</html>
